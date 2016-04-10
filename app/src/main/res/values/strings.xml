@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Mini Vendas</string>
+    <string name="screen_name">Login</string>
+    <string name="t_usuario">Digite seu usuário</string>
+    <string name="b_cadastro">Cadastre-se</string>
+    <string name="b_recup_senha">Recuperar senha</string>
+    <string name="b_cadastro_usuario">Cadastro de Usuário</string>
+    <string name="b_entrar">Entre</string>
+    <string name="st_CadastrarProdutos">Cadastrar Produtos</string>
+    <string name="st_CadastroProdutos">Cadastro de Produtos</string>
+    <string name="st_RealizarVenda">Realizar Venda</string>
+    <string name="st_GerarRelatorio">Gerar Relatório</string>
+    <string name="st_Configuracoes">Configurações</string>
+    <string name="st_NomeProduto">Descrição do Produto</string>
+    <string name="st_UnidadeProduto">Unidade do Produto</string>
+    <string name="st_PrecoUnitario">Preço do Produto</string>
+    <string name="st_CategoriaProduto">Categoria do Produto</string>
+    <string name="st_EditarRegistro">Editar Registro</string>
+    <string name="st_Deletar">Deletar Registro</string>
+    <string name="st_Menu">Menu</string>
+
+    <string name="st_TelaPrincipalTOP">MINI VENDAS</string>
+    <string name="st_TelaPrincipalSEC">Organizar para Evoluir</string>
+    <string name="st_VendaProdutos">Venda de Produtos</string>
+
+
+</resources>
