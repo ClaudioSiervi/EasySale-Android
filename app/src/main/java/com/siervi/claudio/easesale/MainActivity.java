@@ -15,22 +15,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void call_activity_sale(View view) {
-        Intent intent = new Intent(this, activity_sales.class);
+        Intent intent = new Intent(this, SalesActivity.class);
         startActivity(intent);
     }
 
     public void call_activity_product_registration(View view) {
-        Intent intent = new Intent(this, activity_product_registration.class);
+        Intent intent = new Intent(this, ProductRegistrationActivity.class);
         startActivity(intent);
     }
 
     public void call_activity_report(View view) {
-        Intent intent = new Intent(this, activity_report.class);
+        Intent intent = new Intent(this, ReportActivity.class);
         startActivity(intent);
     }
 
     public void call_activity_config(View view) {
-        Intent intent = new Intent(this, activity_config.class);
+        Intent intent = new Intent(this, ConfigActivity.class);
         startActivity(intent);
     }
 }

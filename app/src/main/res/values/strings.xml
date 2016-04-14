@@ -22,6 +22,10 @@
     <string name="st_TelaPrincipalTOP">MINI VENDAS</string>
     <string name="st_TelaPrincipalSEC">Organizar para Evoluir</string>
     <string name="st_VendaProdutos">Venda de Produtos</string>
+    <string name="st_btnCadastroProduto">Cadastrar Novo Produto</string>
+
+    <string name="st_Relatorio">Relatório de Vendas</string>
+
 
 
 </resources>

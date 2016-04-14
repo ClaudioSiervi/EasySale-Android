@@ -31,14 +31,13 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="@string/st_NomeProduto"
-            android:autoText="false"
-            android:editable="false" />
+            />
 
         <EditText
 
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:hint="@string/st_PrecoUnitario"
             />
 
@@ -55,7 +54,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/st_CadastrarProdutos"
-            android:id="@+id/button5" />
+            android:id="@+id/btn_CadastroProduto"
+            />
 
     </LinearLayout>
 

@@ -43,13 +43,18 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5">
+        android:layout_weight="1.8"
+        android:gravity="center">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button" />
+            android:text="@string/st_btnCadastroProduto"
+            android:id="@+id/btn_CadastroProduto"
+            android:layout_gravity="center_horizontal"
+            android:textSize="22sp"
+            />
+
     </LinearLayout>
 
 </LinearLayout>

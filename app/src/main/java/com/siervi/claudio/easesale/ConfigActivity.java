@@ -1,17 +1,16 @@
 package com.siervi.claudio.easesale;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class activity_sales extends AppCompatActivity {
+public class ConfigActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sales);
+        setContentView(R.layout.activity_config);
 
         Intent intent = getIntent();
-    }
-
+            }
 }
