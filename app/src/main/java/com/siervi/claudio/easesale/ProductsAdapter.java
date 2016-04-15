@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -13,48 +14,68 @@ import io.realm.Realm;
 /**
  * Created by Claudio on 09/04/2016.
  */
-public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyViewHolder> {
+public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
 
-
-    private List<Product> Product;
+    private List<Product> productList;
     private Realm realm;
 
+    public ProductsAdapter(List<Product> products) {
 
-    public ProductsAdapter(List<Product> Product) {
-        this.Product = Product;
+        this.productList = products;
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_list_products, parent, false);
+
+        ViewHolder holder = new ViewHolder(v);
+
+        return holder;
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
 
-        public TextView productName, productPrice;
+        holder.productName.setText(productList.get(position).getName());
+        holder.productQuantity.setText("0");
 
-        public MyViewHolder(View view) {
+        holder.sumProducts.setTag(new Integer(position));
+
+        holder.sumProducts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button btn = (Button) v;
+                int clickedPos = ((Integer) btn.getTag()).intValue();
+
+                Product product = productList.get(clickedPos);
+
+
+
+                notifyItemChanged(clickedPos);
+
+            }
+        });
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView productName, productQuantity;
+        public Button sumProducts;
+
+        public ViewHolder(View view) {
             super(view);
-            productName = (TextView) view.findViewById(R.id.txt_nome);
-            productPrice = (TextView) view.findViewById(R.id.txt_documento);
-
+            productName = (TextView) view.findViewById(R.id.txt_productName);
+            productQuantity = (TextView) view.findViewById(R.id.txt_quantity);
+            sumProducts = (Button) view.findViewById(R.id.btn_sumProducts);
         }
     }
 
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_list_products, parent, false);
-
-        return new MyViewHolder(itemView);
-    }
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-
-        final Product Product = this.Product.get(position);
-
-        holder.productName.setText(Product.getName());
-        holder.productPrice.setText("PreÇo: " + Product.getPrice());
-    }
 
     @Override
     public int getItemCount() {
-        return Product.size();
+        return productList.size();
     }
 }

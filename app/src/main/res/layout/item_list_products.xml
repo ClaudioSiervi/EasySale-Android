@@ -13,7 +13,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txt_nome"
+        android:id="@+id/txt_productName"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sale_product_size"
         android:textStyle="bold"
@@ -23,20 +23,22 @@
         android:text="Produto 1" />
 
     <TextView
-        android:id="@+id/txt_documento"
-        android:layout_below="@id/txt_nome"
+        android:id="@+id/txt_quantity"
+        android:layout_below="@id/txt_productName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="666" />
 
     <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/btn_sumProducts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_SomaVenda"
-        android:layout_alignParentEnd="true"
-        android:textSize="@dimen/sale_btn_size"
-        android:text="@string/st_btn_sum"
-        android:background="@color/colorBtn"
-        />
+        android:text="New Button"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

@@ -5,6 +5,7 @@ import io.realm.annotations.Index;
 import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
+// table product
 public class Product extends RealmObject {
     @PrimaryKey
     private String name;

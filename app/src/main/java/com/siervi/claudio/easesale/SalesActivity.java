@@ -12,10 +12,9 @@ import io.realm.Realm;
 
 public class SalesActivity extends AppCompatActivity {
 
-    private List<com.siervi.claudio.easesale.Product> Product;
+    private List<Product> product;
     private RecyclerView mRecyclerView;
     private ProductsAdapter mProductAdapter;
-
     private Realm realm;
 
     @Override
@@ -25,11 +24,11 @@ public class SalesActivity extends AppCompatActivity {
 
         realm = Realm.getDefaultInstance();
 
-        Product = realm.where(com.siervi.claudio.easesale.Product.class).findAll();
+        product = realm.where(Product.class).findAll();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rcv_sales);
 
-        mProductAdapter = new ProductsAdapter(Product);
+        mProductAdapter = new ProductsAdapter(product);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -37,4 +36,11 @@ public class SalesActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mProductAdapter);
 
   }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        realm.close(); // Remember to close Realm when done.
+    }
+
 }
