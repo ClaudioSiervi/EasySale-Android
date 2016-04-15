@@ -11,10 +11,20 @@ import io.realm.annotations.PrimaryKey;
 
 // table sale
 public class Sale extends RealmObject {
+    @PrimaryKey
+    private int id;
 
     private Product product;
-    private Integer quantity;
+    private int quantity;
     private Date date;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Product getProduct() {
         return product;
@@ -24,11 +34,11 @@ public class Sale extends RealmObject {
         this.product = product;
     }
 
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

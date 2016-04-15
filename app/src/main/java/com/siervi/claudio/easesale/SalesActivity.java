@@ -31,6 +31,7 @@ public class SalesActivity extends AppCompatActivity {
         mProductAdapter = new ProductsAdapter(product);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mProductAdapter);
@@ -40,7 +41,7 @@ public class SalesActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        realm.close(); // Remember to close Realm when done.
+        realm.close(); // close Realm when done
     }
 
 }

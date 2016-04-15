@@ -9,14 +9,14 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.5"
+        android:layout_weight="2"
         android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/st_VendaProdutos"
+            android:text="@string/st_saleRegister"
             android:id="@+id/textView"
             android:textStyle="bold"
             android:textSize="@dimen/msg_top" />
@@ -41,16 +41,16 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.8"
+        android:layout_weight="2.3"
         android:gravity="center">
 
         <Button
+            android:id="@+id/btn_confirmSale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/st_btnCadastroProduto"
-            android:id="@+id/btn_CadastroProduto"
+            android:text="@string/st_confirmSale"
             android:layout_gravity="center_horizontal"
-            android:textSize="22sp"
+            android:textSize="@dimen/sale_product_size"
             />
 
     </LinearLayout>

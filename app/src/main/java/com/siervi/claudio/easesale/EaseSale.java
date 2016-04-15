@@ -16,7 +16,7 @@ public class EaseSale extends Application {
         super.onCreate();
 
         RealmConfiguration realmConfig = new RealmConfiguration.Builder(getApplicationContext()).build();
-        Realm.deleteRealm(realmConfig);
+       // Realm.deleteRealm(realmConfig);
         Realm.setDefaultConfiguration(realmConfig);
     }
 }
