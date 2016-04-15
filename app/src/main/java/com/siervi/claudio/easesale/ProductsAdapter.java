@@ -1,13 +1,9 @@
 package com.siervi.claudio.easesale;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import java.util.List;
@@ -20,12 +16,12 @@ import io.realm.Realm;
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyViewHolder> {
 
 
-    private List<ProductList> ProductList;
+    private List<Product> Product;
     private Realm realm;
 
 
-    public ProductsAdapter(List<ProductList> ProductList) {
-        this.ProductList = ProductList;
+    public ProductsAdapter(List<Product> Product) {
+        this.Product = Product;
     }
 
 
@@ -51,7 +47,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        final ProductList Product = ProductList.get(position);
+        final Product Product = this.Product.get(position);
 
         holder.productName.setText(Product.getName());
         holder.productPrice.setText("PreÇo: " + Product.getPrice());
@@ -59,6 +55,6 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return ProductList.size();
+        return Product.size();
     }
 }

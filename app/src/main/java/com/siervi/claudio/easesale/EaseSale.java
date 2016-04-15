@@ -7,6 +7,8 @@ import io.realm.RealmConfiguration;
 /**
  * Created by Claudio on 12/04/2016.
  */
+
+// global methods
 public class EaseSale extends Application {
 
     @Override
@@ -14,6 +16,7 @@ public class EaseSale extends Application {
         super.onCreate();
 
         RealmConfiguration realmConfig = new RealmConfiguration.Builder(getApplicationContext()).build();
+        //Realm.deleteRealm(realmConfig);
         Realm.setDefaultConfiguration(realmConfig);
 
     }

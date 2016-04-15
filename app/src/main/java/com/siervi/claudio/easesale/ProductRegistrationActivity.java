@@ -1,12 +1,14 @@
 package com.siervi.claudio.easesale;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.List;
 
 import io.realm.Realm;
 
@@ -49,22 +51,24 @@ public class ProductRegistrationActivity extends AppCompatActivity {
     // IMPLEMENTAR O MÉTODO DE INSERÇÃO
     private  void registerProduct(View view){
 
-    try{
-    // Salva o novo ingresso no banco de dados
-    realm.beginTransaction();
+        try{
+            // Salva o novo ingresso no banco de dados
+            realm.beginTransaction();
 
-    ProductList product = realm.createObject(ProductList.class);
+            Product product = realm.createObject(Product.class);
 
-    product.setName(edtProductName.getText().toString());
-        product.setPrice(Double.parseDouble(edtProductPrice.getText().toString()));
+            product.setName(edtProductName.getText().toString());
+            product.setPrice(Double.parseDouble(edtProductPrice.getText().toString()));
 
-    realm.commitTransaction();
+            realm.commitTransaction();
+
+            Product produto = realm.where(Product.class).equalTo("name",edtProductName.getText().toString()).findFirst();
+            Toast.makeText(ProductRegistrationActivity.this, produto.getName() + " cadastrado.", Toast.LENGTH_SHORT).show();
 
 
-
-    } catch (Exception e){
-        Log.e("Realm Error", "error", e);
-    }
+        } catch (Exception e){
+            Log.e("Realm Error", "error", e);
+        }
 
 
 // clean view

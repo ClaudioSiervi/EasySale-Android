@@ -12,7 +12,7 @@ import io.realm.Realm;
 
 public class SalesActivity extends AppCompatActivity {
 
-    private List<ProductList> Product;
+    private List<com.siervi.claudio.easesale.Product> Product;
     private RecyclerView mRecyclerView;
     private ProductsAdapter mProductAdapter;
 
@@ -25,7 +25,7 @@ public class SalesActivity extends AppCompatActivity {
 
         realm = Realm.getDefaultInstance();
 
-        Product = realm.where(ProductList.class).findAll();
+        Product = realm.where(com.siervi.claudio.easesale.Product.class).findAll();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rcv_sales);
 
