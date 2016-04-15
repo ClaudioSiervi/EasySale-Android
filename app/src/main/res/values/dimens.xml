@@ -4,4 +4,9 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="msg_top">38sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="sale_btn_size">18dp</dimen>
+    <dimen name="sale_product_size">20dp</dimen>
+    <dimen name="btnTextSize">20dp</dimen>
+
 </resources>
