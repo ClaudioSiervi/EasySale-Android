@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -48,15 +49,13 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
 // Recupera quantidade vendida do produto
         Product product = productList.get(position);
-        //Sale sale = null;
 
-//        Boolean verificaProduto = saleList.contains(product);
-        int index = saleList.indexOf(product);
+// Atualiza a venda
+        Sale sale = recuperaVenda(product.getName());
 
-        if (index >= 0){
-           Sale sale = saleList.get(saleList.indexOf(product));
-           holder.productQuantity.setText(sale.getQuantity());
-
+        if (sale != null){
+//           sale = saleList.get(saleList.indexOf(product));
+           holder.productQuantity.setText(String.valueOf(sale.getQuantity()));
         } else {
             holder.productQuantity.setText("0");
         }
@@ -71,6 +70,17 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         });
     }
 
+    private Sale recuperaVenda(String name) {
+        Sale sale = null;
+        for (int i = 0; i < saleList.size(); i++) {
+            if (saleList.get(i).getProduct().getName().equals(name)) {
+                return saleList.get(i);
+
+            }
+        }
+        return sale;
+    }
+
 
     public void atualizeSale(View v) {
 
@@ -79,16 +89,17 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
 // Recupera o produto clicado
         Product product = productList.get(clickedPos);
-        Sale sale = null;
 
-// Se a lista não está vazia e contem o produto clicado recupera o item
-        if (!saleList.isEmpty() && saleList.contains(product)){
-            sale = saleList.get(saleList.indexOf(product)) ;
-        }
+// Recupera o item da venda
+        Sale sale = recuperaVenda(product.getName());
+        int item = recuperaItemVenda(product.getName());
 
+// Se a lista contem o produto clicado adiciona 1 na quantidade
+        if ( sale != null ) {
+            sale.setQuantity(sale.getQuantity() + 1);
+            saleList.set(item,sale);
+        } else {
 // Se o item ainda nao estava na venda adiciona
-        if (sale == null) {
-
             sale = new Sale();
             sale.setId(idSale);
             sale.setProduct(product);
@@ -96,15 +107,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             //DateFormat today = new SimpleDateFormat("");
             // TODO ATRIBUIR DATA
             saleList.add(sale);
-
         }
-// Senão somente atualiza a quantidade
-        else {
-            saleList.get(saleList.indexOf(product)).setQuantity(sale.getQuantity()+1);
-        }
-
-
-/*
+        /*
         realm = Realm.getDefaultInstance();
         Sale sale = realm.createObject(Sale.class);
         realm.commitTransaction();
@@ -112,6 +116,16 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         notifyItemChanged(clickedPos);
     }
 
+    private int recuperaItemVenda(String name) {
+        int i;
+        for (i = 0; i < saleList.size(); i++) {
+            if (saleList.get(i).getProduct().getName().equals(name)) {
+                return i;
+
+            }
+        }
+        return i;
+    }
 
 
 
