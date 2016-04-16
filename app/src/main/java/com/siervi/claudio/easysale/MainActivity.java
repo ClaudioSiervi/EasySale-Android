@@ -1,4 +1,4 @@
-package com.siervi.claudio.easesale;
+package com.siervi.claudio.easysale;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         btnProductRegistration = (Button) findViewById(R.id.btn_ProductRegistration );
         btnMakeSale = (Button) findViewById(R.id.btn_MakeSale );
         btnReport = (Button) findViewById(R.id.btn_Report );
-        btnConfig = (Button) findViewById(R.id.btn_Config );
     }
 
     // set buttons methods
@@ -47,11 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnConfig.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                configActivity(v);
-            }
-        });
 
     }
 
@@ -71,9 +65,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void configActivity(View view) {
-        Intent intent = new Intent(this, ConfigActivity.class);
-        startActivity(intent);
-    }
 }
 

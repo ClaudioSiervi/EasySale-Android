@@ -1,4 +1,4 @@
-package com.siervi.claudio.easesale;
+package com.siervi.claudio.easysale;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

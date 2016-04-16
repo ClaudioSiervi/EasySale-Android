@@ -66,14 +66,7 @@
             android:onClick="call_activity_report"
             />
 
-        <Button
-            android:id="@+id/btn_Config"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/st_Configuracoes"
-            android:layout_gravity="center_horizontal"
-            android:onClick="call_activity_config"
-            />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.siervi.claudio.easesale;
+package com.siervi.claudio.easysale;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

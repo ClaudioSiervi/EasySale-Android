@@ -1,4 +1,4 @@
-package com.siervi.claudio.easesale;
+package com.siervi.claudio.easysale;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.siervi.claudio.easesale;
+package com.siervi.claudio.easysale;
 
 import android.app.Application;
 import io.realm.Realm;
@@ -9,7 +9,7 @@ import io.realm.RealmConfiguration;
  */
 
 // global methods
-public class EaseSale extends Application {
+public class EasySale extends Application {
 
     @Override
     public void onCreate() {
