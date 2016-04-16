@@ -19,7 +19,8 @@
             android:text="@string/st_saleRegister"
             android:id="@+id/textView"
             android:textStyle="bold"
-            android:textSize="@dimen/msg_top" />
+            android:textSize="@dimen/msg_top"
+            />
 
     </LinearLayout>
 

@@ -24,8 +24,9 @@
     <string name="st_saleRegister">Registro de Vendas</string>
     <string name="st_confirmSale">Confirmar Venda</string>
 
-    <string name="st_Relatorio">Relatório de Vendas</string>
     <string name="st_btn_sum">+</string>
+    <string name="st_topReport">Relatório de Vendas</string>
+
 
 
 
