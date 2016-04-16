@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mini Vendas</string>
+    <string name="app_name">EasySale</string>
     <string name="screen_name">Login</string>
     <string name="t_usuario">Digite seu usuário</string>
     <string name="b_cadastro">Cadastre-se</string>
@@ -19,8 +19,8 @@
     <string name="st_Deletar">Deletar Registro</string>
     <string name="st_Menu">Menu</string>
 
-    <string name="st_TelaPrincipalTOP">MINI VENDAS</string>
-    <string name="st_TelaPrincipalSEC">Organizar para Evoluir</string>
+    <string name="st_TelaPrincipalTOP">EASY SALE</string>
+    <string name="st_TelaPrincipalSEC">Simples e Rápido</string>
     <string name="st_saleRegister">Registro de Vendas</string>
     <string name="st_confirmSale">Confirmar Venda</string>
 
