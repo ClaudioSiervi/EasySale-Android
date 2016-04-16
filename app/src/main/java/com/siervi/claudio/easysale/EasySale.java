@@ -8,6 +8,7 @@ import io.realm.RealmConfiguration;
  * Created by Claudio on 12/04/2016.
  */
 
+
 // global methods
 public class EasySale extends Application {
 
