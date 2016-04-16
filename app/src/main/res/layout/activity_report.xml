@@ -1,52 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFFFF"
-    >
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_sales_report"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:gravity="center">
+        android:layout_height="match_parent"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/st_Relatorio"
-            android:id="@+id/textView2"
-            android:textStyle="bold"
-            android:textSize="@dimen/msg_top" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rcv_report"
-            android:scrollbars="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-
-        <TextView
-            android:id="@android:id/empty"
-            android:layout_gravity="center"
-            android:text="UFA! Nenhum zumbie foi encontrado =D"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="22sp"
-            />
-    </LinearLayout>
 
 </LinearLayout>

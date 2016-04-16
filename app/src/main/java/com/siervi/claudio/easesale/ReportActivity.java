@@ -30,13 +30,12 @@ public class ReportActivity extends AppCompatActivity {
 
         sales = realm.where(Sale.class).findAll();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.rcv_sales);
+        mRecyclerView = (RecyclerView) findViewById(R.id.rcv_sales_report);
 
         mSaleAdapter = new SalesAdapter(sales);
 
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(ReportActivity.this);
-       // layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        mRecyclerView.setLayoutManager(layoutManager);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mSaleAdapter);
 
