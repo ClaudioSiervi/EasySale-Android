@@ -19,7 +19,6 @@
         <activity android:name="com.siervi.claudio.easysale.ProductRegistrationActivity" />
         <activity android:name="com.siervi.claudio.easysale.ReportActivity"
             android:parentActivityName="com.siervi.claudio.easysale.MainActivity"/>
-        <activity android:name="com.siervi.claudio.easysale.ConfigActivity" />
 
     </application>
 

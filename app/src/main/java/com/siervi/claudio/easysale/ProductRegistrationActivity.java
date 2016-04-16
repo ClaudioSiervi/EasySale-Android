@@ -31,7 +31,7 @@ public class ProductRegistrationActivity extends AppCompatActivity {
         super.onDestroy();
         realm.close();
     }
-
+    // define buttons
     private void setUI() {
         btnRegisterProduct = (Button) findViewById(R.id.btn_RegisterProduct);
         edtProductName = (EditText) findViewById(R.id.edt_ProductName);
@@ -46,11 +46,10 @@ public class ProductRegistrationActivity extends AppCompatActivity {
         });
     }
 
-    // IMPLEMENTAR O MÉTODO DE INSERÇÃO
+    // save a new object
     private  void registerProduct(View view){
-
         try{
-            // Salva o novo objeto no banco de dados
+
             realm.beginTransaction();
 
             Product product = realm.createObject(Product.class);
@@ -67,7 +66,6 @@ public class ProductRegistrationActivity extends AppCompatActivity {
         } catch (Exception e){
             Log.e("Realm Error", "error", e);
         }
-
 
 // clean view
     edtProductName.setText("");

@@ -33,20 +33,16 @@ public class MainActivity extends AppCompatActivity {
                 productRegistrationActivity(v);
             }
         });
-
         btnMakeSale.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 saleActivity(v);
             }
         });
-
         btnReport.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 reportActivity(v);
             }
         });
-
-
     }
 
     // methods

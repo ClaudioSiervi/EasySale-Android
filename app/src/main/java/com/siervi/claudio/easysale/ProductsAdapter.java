@@ -16,11 +16,9 @@ import io.realm.Realm;
  */
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
 
-    private List<Product> productList;
     public List<Sale> saleList = new ArrayList<Sale>();
+    private List<Product> productList;
     private int idSale = 1;
-    private Realm realm; // Verificar se essa variável é util
-
     public ProductsAdapter(List<Product> products) {
         this.productList = products;
     }
@@ -40,14 +38,13 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
         holder.productName.setText(productList.get(position).getName());
 
-// Recupera quantidade vendida do produto
+        // get product
         Product product = productList.get(position);
 
-// Atualiza a venda
-        Sale sale = recuperaVenda(product.getName());
+        // update sale
+        Sale sale = recoverSale(product.getName());
 
         if (sale != null){
-//           sale = saleList.get(saleList.indexOf(product));
            holder.productQuantity.setText(String.valueOf(sale.getQuantity()));
         } else {
             holder.productQuantity.setText("0");
@@ -62,8 +59,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             }
         });
     }
-
-    private Sale recuperaVenda(String name) {
+    // verify if there are sales
+    private Sale recoverSale(String name) {
         Sale sale = null;
         for (int i = 0; i < saleList.size(); i++) {
             if (saleList.get(i).getProduct().getName().equals(name)) {
@@ -74,25 +71,21 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         return sale;
     }
 
-
     public void atualizeSale(View v) {
 
         Button btn = (Button) v;
-        int clickedPos = ((Integer) btn.getTag()).intValue(); // Retorna a posição da view selecionada
+        int clickedPos = ((Integer) btn.getTag()).intValue(); // return position
 
-// Recupera o produto clicado
-        Product product = productList.get(clickedPos);
+        Product product = productList.get(clickedPos);  // recover product
+        Sale sale = recoverSale(product.getName());     // recover sale
+        int item = recoverItemSale(product.getName());
 
-// Recupera o item da venda
-        Sale sale = recuperaVenda(product.getName());
-        int item = recuperaItemVenda(product.getName());
-
-// Se a lista contem o produto clicado adiciona 1 na quantidade
+        // If the product there exists add quantity
         if ( sale != null ) {
             sale.setQuantity(sale.getQuantity() + 1);
             saleList.set(item,sale);
         } else {
-// Se o item ainda nao estava na venda adiciona
+            // else add sale
             sale = new Sale();
             sale.setId(idSale);
             sale.setProduct(product);
@@ -101,15 +94,11 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             // TODO ATRIBUIR DATA
             saleList.add(sale);
         }
-        /*
-        realm = Realm.getDefaultInstance();
-        Sale sale = realm.createObject(Sale.class);
-        realm.commitTransaction();
-*/
+
         notifyItemChanged(clickedPos);
     }
-
-    private int recuperaItemVenda(String name) {
+    // return sale position
+    private int recoverItemSale(String name) {
         int i;
         for (i = 0; i < saleList.size(); i++) {
             if (saleList.get(i).getProduct().getName().equals(name)) {
@@ -119,8 +108,6 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         }
         return i;
     }
-
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView productName, productQuantity;
@@ -133,7 +120,6 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             sumProducts = (Button) view.findViewById(R.id.btn_sumProducts);
         }
     }
-
 
     @Override
     public int getItemCount() {
