@@ -52,7 +52,7 @@ public class ProductRegistrationActivity extends AppCompatActivity {
     private  void registerProduct(View view){
 
         try{
-            // Salva o novo ingresso no banco de dados
+            // Salva o novo objeto no banco de dados
             realm.beginTransaction();
 
             Product product = realm.createObject(Product.class);

@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".SalesActivity" />
         <activity android:name=".ProductRegistrationActivity" />
-        <activity android:name=".ReportActivity" />
+        <activity android:name=".ReportActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".ConfigActivity" />
 
     </application>

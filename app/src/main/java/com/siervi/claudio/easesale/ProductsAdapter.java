@@ -24,7 +24,7 @@ import io.realm.Realm;
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
 
     private List<Product> productList;
-    private List<Sale> saleList = new ArrayList<Sale>();
+    public List<Sale> saleList = new ArrayList<Sale>();
     private int idSale = 1;
     private Realm realm; // Verificar se essa variável é util
 
